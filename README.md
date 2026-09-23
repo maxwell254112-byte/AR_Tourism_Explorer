@@ -19,6 +19,28 @@ This is a generic platform. Destination names, posters, videos and map coordinat
 
 Visitors scan one system QR code to open the AR page. Attraction cards show photos only. After the camera starts, visitors scan a printed or on-screen photo to watch the video.
 
+## Penang AR photos
+
+These three photos are the AR scan targets. Print them or open them on another screen, then point the phone camera at the photo (not a QR code).
+
+| Attraction | Photo file | YouTube |
+| --- | --- | --- |
+| Penang Hill | `assets/images/penang/penang-hill.jpg` | https://www.youtube.com/watch?v=XPTGsusPL7M |
+| Kek Lok Si Temple | `assets/images/penang/kek-lok-si.jpg` | https://www.youtube.com/watch?v=TMK2Zpml6eM |
+| George Town Street Art | `assets/images/penang/georgetown-street-art.jpg` | https://www.youtube.com/watch?v=Q-uf2CiJNvg |
+
+Compiled MindAR target (all three photos in one set):
+
+- `assets/ar-targets/penang-set.mind`
+
+Demo destination cover photos (Coastal, Food, Harbour, etc.):
+
+- `assets/images/demo/*.jpg`
+
+Print page: open `photos.php` on the site.
+
+If attraction cards show `???` instead of text, import `database/fix-photo-text.sql` in phpMyAdmin (broken Chinese encoding on the server).
+
 ## Technology stack
 
 - PHP 8.3+
@@ -142,7 +164,8 @@ Videos start muted when the browser requires it for autoplay.
 | Problem | What to check |
 | --- | --- |
 | Database error | Credentials in `includes/config.php` and that the SQL file was imported |
-| Cannot log in | Default password `Admin@12345`; after 5 failures wait 10 minutes |
+| Cannot log in | Default password `admin123`; after 5 failures wait 10 minutes. Or open `install/reset-admin.php` once, then delete it |
+| Cards show `???` | Import `database/fix-photo-text.sql` (UTF-8 encoding) |
 | Camera denied | Browser permission, HTTPS, and that another app is not using the camera |
 | Poster not detected | Lighting, full poster in view, and that the compiled target matches the printed image |
 | Target missing | Compile or upload a `.mind` file until status is `READY` |
@@ -151,13 +174,14 @@ Videos start muted when the browser requires it for autoplay.
 
 ## Deployment to cPanel
 
-1. Upload the project into `public_html` (or a subfolder).
+1. Upload the project into `public_html` (or a subfolder), including `assets/images/penang/` and `assets/ar-targets/penang-set.mind`.
 2. Create a MySQL database and user in cPanel.
-3. Import `database/database.sql`.
+3. Import `database/database-cpanel.sql` (or `database/database.sql` for local).
 4. Update `includes/config.php`.
 5. Enable SSL.
 6. Make `assets/uploads` and `assets/ar-targets` writable.
 7. Change the default admin password.
+8. Confirm AR works: open `ar.php` → **START AR** → scan a Penang photo.
 
 ## Project structure
 
