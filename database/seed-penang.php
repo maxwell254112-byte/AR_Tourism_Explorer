@@ -41,7 +41,7 @@ $destinationId = (int) $pdo->query("SELECT id FROM destinations WHERE slug='pena
 $attractions = [
     [
         'name' => 'Penang Hill',
-        'short' => '升旗山 · Panoramic views of George Town.',
+        'short' => 'Bukit Bendera / Penang Hill - panoramic views of George Town.',
         'full' => 'Penang Hill (Bukit Bendera) is a hill resort in Air Itam. Scan this photo in the AR experience to watch the travel video.',
         'image' => 'assets/images/penang/penang-hill.jpg',
         'youtube' => 'https://www.youtube.com/watch?v=XPTGsusPL7M',
@@ -56,7 +56,7 @@ $attractions = [
     ],
     [
         'name' => 'Kek Lok Si Temple',
-        'short' => '极乐寺 · A major hilltop Buddhist temple in Air Itam.',
+        'short' => 'Kek Lok Si Temple - major hilltop Buddhist temple in Air Itam.',
         'full' => 'Kek Lok Si is one of the best-known temples in Penang. Scan this photo in the AR experience to watch the temple video.',
         'image' => 'assets/images/penang/kek-lok-si.jpg',
         'youtube' => 'https://www.youtube.com/watch?v=TMK2Zpml6eM',
@@ -71,7 +71,7 @@ $attractions = [
     ],
     [
         'name' => 'George Town Street Art',
-        'short' => '乔治市街头艺术 · Murals and heritage streets.',
+        'short' => 'George Town street art - murals and heritage streets.',
         'full' => 'George Town is known for street art and heritage shophouses. Scan this photo in the AR experience to watch the street-art video.',
         'image' => 'assets/images/penang/georgetown-street-art.jpg',
         'youtube' => 'https://www.youtube.com/watch?v=Q-uf2CiJNvg',
