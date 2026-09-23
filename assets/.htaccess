@@ -1,0 +1,5 @@
+# Allow public static assets (css/js/images)
+<IfModule mod_authz_core.c>
+    Require all granted
+</IfModule>
+Options -Indexes

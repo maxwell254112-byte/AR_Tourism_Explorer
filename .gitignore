@@ -1,0 +1,28 @@
+# Dependencies / build
+node_modules/
+tools/mind-compile/node_modules/
+*.zip
+
+# Local / IDE
+.cursor/
+.vscode/
+.idea/
+*.log
+Thumbs.db
+Desktop.ini
+
+# Runtime caches / uploads (keep folders via .gitkeep if needed)
+assets/images/qr-cache/*
+!assets/images/qr-cache/.htaccess
+!assets/images/qr-cache/index.php
+assets/uploads/*
+!assets/uploads/.htaccess
+!assets/uploads/index.php
+
+# Temp tools output
+tools/admin-hash.txt
+tools/.admin123.hash
+
+FIX-CSS-403.txt
+AR_Tourism_Explorer_CSS_FIX/
+

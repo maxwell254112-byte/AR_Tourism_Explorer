@@ -1,0 +1,8 @@
+# AR Tourism Explorer - safe cPanel .htaccess
+Options -Indexes
+
+<IfModule mod_authz_core.c>
+    <FilesMatch "\.(bak|sql|ini|log|sh|swp)$">
+        Require all denied
+    </FilesMatch>
+</IfModule>
